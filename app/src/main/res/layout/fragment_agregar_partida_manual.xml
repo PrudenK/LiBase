@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.AgregarPartidaManualFragment">
+
+    <ImageView
+        android:id="@+id/imgFondo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/fondo"
+        android:scaleType="centerCrop" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/toolbar">
+
+        <TextView
+            android:id="@+id/titulo_tool_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/titulo_toolbar"
+            android:textSize="@dimen/text_26"
+            style="@style/titulos"
+            />
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:paddingTop="@dimen/margin_8">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/margin_16">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilEco"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/eco_input_hint_fragment"
+                app:endIconMode="clear_text"
+                app:boxBackgroundColor="@color/inputBackground"
+                app:hintTextColor="@color/hintTextColor"
+                app:boxStrokeColor="@color/strokeColor">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_eco"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:maxLength="3"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@color/hintTextColor" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilMovimientos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_8"
+                android:hint="@string/movimientos_input_hint_fragment"
+                app:endIconMode="clear_text"
+                app:boxBackgroundColor="@color/inputBackground"
+                app:hintTextColor="@color/hintTextColor"
+                app:boxStrokeColor="@color/strokeColor">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_movimientos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine"
+                    android:maxLines="3"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@color/hintTextColor" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilFecha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_8"
+                android:hint="@string/fecha_input_hint_fragment"
+                app:endIconMode="clear_text"
+                app:boxBackgroundColor="@color/inputBackground"
+                app:hintTextColor="@color/hintTextColor"
+                app:boxStrokeColor="@color/strokeColor">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_fecha"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="date"
+                    android:maxLines="1"
+                    android:maxLength="10"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@color/hintTextColor" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilVariante"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_8"
+                android:hint="@string/variante_input_hint_fragment"
+                app:endIconMode="clear_text"
+                app:boxBackgroundColor="@color/inputBackground"
+                app:hintTextColor="@color/hintTextColor"
+                app:boxStrokeColor="@color/strokeColor">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_variante"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:maxLines="2"
+                    android:maxLength="30"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@color/hintTextColor" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilJugadorBlancas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_8"
+                android:hint="@string/jugador_blancas_input_hint_fragment"
+                app:endIconMode="clear_text"
+                app:boxBackgroundColor="@color/inputBackground"
+                app:hintTextColor="@color/hintTextColor"
+                app:boxStrokeColor="@color/strokeColor">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_jugador_blancas"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:maxLength="15"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@color/hintTextColor" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilEloBlancas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_8"
+                android:hint="@string/elo_blancas_input_hint_fragment"
+                app:endIconMode="clear_text"
+                app:boxBackgroundColor="@color/inputBackground"
+                app:hintTextColor="@color/hintTextColor"
+                app:boxStrokeColor="@color/strokeColor">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_elo_blancas"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:maxLength="4"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@color/hintTextColor" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilJugadorNegras"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_8"
+                android:hint="@string/jugador_negras_input_hint_fragment"
+                app:endIconMode="clear_text"
+                app:boxBackgroundColor="@color/inputBackground"
+                app:hintTextColor="@color/hintTextColor"
+                app:boxStrokeColor="@color/strokeColor">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_jugador_negras"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:maxLength="15"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@color/hintTextColor" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilEloNegras"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_8"
+                android:hint="@string/elo_negras_input_hint_fragment"
+                app:endIconMode="clear_text"
+                app:boxBackgroundColor="@color/inputBackground"
+                app:hintTextColor="@color/hintTextColor"
+                app:boxStrokeColor="@color/strokeColor">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_elo_negras"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:maxLength="4"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@color/hintTextColor" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilTiempo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_8"
+                android:hint="@string/tiempo_input_hint_fragment"
+                app:endIconMode="clear_text"
+                app:boxBackgroundColor="@color/inputBackground"
+                app:hintTextColor="@color/hintTextColor"
+                app:boxStrokeColor="@color/strokeColor">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_tiempo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:maxLength="7"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@color/hintTextColor" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilResultado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_8"
+                android:hint="@string/resultado_input_hint_fragment"
+                app:endIconMode="clear_text"
+                app:boxBackgroundColor="@color/inputBackground"
+                app:hintTextColor="@color/hintTextColor"
+                app:boxStrokeColor="@color/strokeColor"
+                android:layout_marginBottom="@dimen/margin_20">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_resultado"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:maxLength="7"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@color/hintTextColor" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</FrameLayout>

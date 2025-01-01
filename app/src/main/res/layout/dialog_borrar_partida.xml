@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_margin="@dimen/margin_16"
+    app:cardCornerRadius="@dimen/radius_16"
+    app:cardElevation="@dimen/elevation_8"
+    app:cardBackgroundColor="@color/bottom_app_bar">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_16">
+
+        <TextView
+            android:id="@+id/tv_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/quieres_borrar_la_partida"
+            android:textColor="@color/lightGrayColor"
+            android:textSize="@dimen/text_20"
+            android:gravity="center"
+            android:layout_marginBottom="@dimen/margin_16"
+            style="@style/titulos"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btn_cancelar"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/lightGrayColor"
+                android:text="@string/cancelar"
+                android:textColor="@color/bottom_app_bar"
+                android:layout_weight="1"
+                android:layout_marginEnd="@dimen/margin_20"
+                />
+
+
+            <Button
+                android:id="@+id/btn_borrar"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/lightGrayColor"
+                android:text="@string/borrar"
+                android:textColor="@color/bottom_app_bar"
+                android:layout_weight="1"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

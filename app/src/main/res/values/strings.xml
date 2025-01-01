@@ -1,0 +1,67 @@
+<resources>
+    <string name="app_name">LiBase</string>
+    <string name="usuario">Usuario</string>
+    <string name="fondo">fondo</string>
+    <string name="contra">Contraseña</string>
+    <string name="iniciarSesion">Login</string>
+    <string name="guardar_datos">Recordar tus datos</string>
+    <string name="registrarse">Registrarse</string>
+
+
+
+    <string name="menu_guardar">Subir partida</string>
+    <string name="id_partida_modificar">Modificar partida</string>
+    <string name="partida_modificada">Partida modificada con éxito</string>
+    <string name="no_hay_partidas">No hay partidas</string>
+    <string name="descripcion_apertura_default">Apertura Española, variantes estratégicas como la Berlinesa, Chigorin y Zaitsev.</string>
+    <string name="num_partidas_apertura_default">22/105</string>
+    <string name="codigo_eco_general_apertura_default">C60-C99</string>
+    <string name="nombre_apertura_default">Apertura Española</string>
+    <string name="foto_ejemplo_apertura">Foto ejemplo apertura</string>
+    <string name="variante_partida_default">King\'s Indian Defense: Normal Variation, King\'s Knight Variation (E60)</string>
+    <string name="nombre_blancas_partida_default">Blanco: Manolo72 (2192)</string>
+    <string name="nombre_negro_partida_default">Negro: Elyoya_gap (2038)</string>
+    <string name="ritmo_partida_default">Ritmo: 180+0</string>
+    <string name="resultado_partida_default">R: 1/2-1/2</string>
+    <string name="movimientos">Movimientos</string>
+    <string name="movimientos_partida_default">1. d4 e6 2. Nf3 d5 3. g3 c6 4. Bg2 f5 5. O-O Nf6 6. c4 Bd6 7. Nc3 O-O 8. a3 Nbd7 9. b4 Qe8 10. c5 Bc7 11. Qc2 Ne4 12. Nxe4 fxe4 13. Ng5 h6 14. Nh3 e5 15. e3 exd4 16. exd4 Nf6 17. Nf4 g5 18. Ne2 Qh5 19. f4 Bg4 20. fxg5 Bxe2 21. Rxf6 Rxf6 22. gxf6 Bd3 23. Qd2 Kh7 24. Qf2 Rf8 25. Be3 Kg6 26. Bf1 Rxf6 27. Qd2 Bxf1 28. Rxf1 Rxf1+ 29. Kxf1 Bd8 30. Kg2 Bg5 31. Bxg5 hxg5 32. Qe3 g4 33. Qf4 Qh3+ 34. Kg1 Qh5 35. Qd6+ Kf7 36. Qc7+ Kg6 37. Qxb7 Qf5 38. Qxc6+ Kg5 39. Qd6 e3 40. Qf4+ Qxf4 41. gxf4+ Kxf4 42. c6 Kf3 43. Kf1 Ke4 44. c7 Kxd4 45. c8=Q Kd3 46. Qxg4 d4 47. Qe2+ Ke4 48. Qg4+ Kd3 49. Ke1 Kc3 50. Qc8+ Kd3 51. Kd1 e2+ 52. Ke1 Ke3 53. Qe8+ 1-0</string>
+    <string name="fecha__partida_default">Fecha: 2024.12.21</string>
+    <string name="ver_en_lichess">Ver en lichess</string>
+
+
+    <string name="introduce_los_datos_de_la_partida">Introduce los datos de la partida</string>
+    <string name="eco_input_hint_fragment">ECO (e.g., D02)</string>
+    <string name="movimientos_input_hint_fragment">Movimientos (e.g., 1. d4 d5 2. Nf3 Nf6)</string>
+    <string name="fecha_input_hint_fragment">Fecha (e.g., 2024.12.10)</string>
+    <string name="variante_input_hint_fragment">Variante (e.g., Queen\'s Pawn Game)</string>
+    <string name="jugador_blancas_input_hint_fragment">Jugador Blancas (e.g., Elyoya_gap)</string>
+    <string name="elo_blancas_input_hint_fragment">ELO Blancas (e.g., 2124)</string>
+    <string name="jugador_negras_input_hint_fragment">Jugador Negras (e.g., A30MD30)</string>
+    <string name="elo_negras_input_hint_fragment">ELO Negras (e.g., 2119)</string>
+    <string name="tiempo_input_hint_fragment">Tiempo (e.j., 60+0, 180+2)</string>
+    <string name="resultado_input_hint_fragment">Resultado (1-0, 0-1 o 1/2-1/2)</string>
+    <string name="cancelar_boton_fragment">Cancelar</string>
+    <string name="aceptar_boton_fragment">Aceptar</string>
+    <string name="titulo_toolbar">Mi Título</string>
+    <string name="tus_partidas_favoritas">Tus partidas favoritas</string>
+    <string name="partidas_de_todo_el_mundo">Partidas de todo el mundo</string>
+    <string name="tu_biblioteca_de_aperturas">Tu biblioteca de aperturas</string>
+    <string name="tus_partidas">Tus partidas</string>
+    <string name="introduce_la_url_de_la_partida">Introduce la URL de la partida</string>
+    <string name="https_lichess_org">https://lichess.org/...</string>
+    <string name="subir">Subir</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="menu">Menu</string>
+    <string name="definicion_eco">El código ECO (Enciclopedia de Aperturas de Ajedrez) clasifica las aperturas en cinco categorías principales (A-E), divididas en subcategorías numeradas del 00 al 99. Cada subcategoría detalla variantes específicas de una apertura. Por ejemplo, la categoría \'C\' incluye aperturas abiertas, y dentro de ella, los códigos C00-C19 corresponden a la Defensa Francesa y sus variantes. Este sistema facilita el estudio y análisis de partidas al identificar de manera precisa las líneas de apertura según su secuencia inicial.</string>
+    <string name="que_es_el_codigo_eco">¿Qué es el código Eco?</string>
+    <string name="cerrar">Cerrar</string>
+    <string name="info_eco">Info Eco</string>
+    <string name="agregar_datos_a_db">Agregar datos a DB</string>
+    <string name="una_partida_por_rango_de_eco">Una partida por rango de ECO</string>
+    <string name="a00_a09">(A00-A09)</string>
+    <string name="quieres_borrar_la_partida">¿Quieres borrar la partida?</string>
+    <string name="borrar">Borrar</string>
+    <string name="subir_datos_a_la_base_de_datos">Subir datos a la base de datos</string>
+    <string name="datos_a_subir">Datos a subir</string>
+    <string name="logo_de_libase">Logo de LiBase</string>
+</resources>

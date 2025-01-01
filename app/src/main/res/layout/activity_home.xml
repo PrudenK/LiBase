@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.HomeActivity">
+
+
+
+
+    <ImageView
+        android:id="@+id/imgFondo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/fondo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <ImageView
+        android:id="@+id/menu_extra"
+        android:layout_width="@dimen/w_40"
+        android:layout_height="@dimen/h_40"
+        android:contentDescription="@string/menu"
+        android:src="@drawable/ic_menu"
+        app:layout_constraintBottom_toBottomOf="@+id/titulo_home"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/titulo_home"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/selectableItemBackground"
+        />
+
+    <TextView
+        android:id="@+id/titulo_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        android:text="@string/tu_biblioteca_de_aperturas"
+
+        android:layout_marginTop="@dimen/margin_20"
+
+        style="@style/titulos"
+        />
+
+    <TextView
+        android:id="@+id/texto_si_no_hay_aperturas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottom_app_bar"
+        app:layout_constraintVertical_bias="0.3"
+        style="@style/titulos"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_home"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margin_20"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titulo_home"
+        app:layout_constraintBottom_toTopOf="@id/bottom_app_bar"
+        android:layout_marginBottom="@dimen/margin_12"
+        tools:listitem="@layout/item_apertura"
+        />
+
+    <include
+        android:id="@+id/bottom_app_bar"
+        layout="@layout/bottom_app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_url"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_url"
+        android:visibility="gone"
+        android:layout_marginBottom="@dimen/margin_20"
+        app:layout_constraintBottom_toTopOf="@id/fab_menu"
+        app:layout_constraintEnd_toEndOf="@id/fab_menu"
+        android:backgroundTint="@color/bottom_app_bar"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.MaterialComponents.FloatingActionButton"
+        />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_manual"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_manual"
+        android:visibility="gone"
+        android:layout_marginBottom="@dimen/margin_20"
+        app:layout_constraintBottom_toTopOf="@id/fab_url"
+        app:layout_constraintEnd_toEndOf="@id/fab_url"
+        android:backgroundTint="@color/bottom_app_bar"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.MaterialComponents.FloatingActionButton"
+        />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="@dimen/margin_16"
+        android:layout_marginBottom="@dimen/margin_60"
+        android:backgroundTint="@color/bottom_app_bar"
+
+        />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

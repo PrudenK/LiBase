@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_partida"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="@dimen/margin_12"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorFondoAperturas"
+            >
+
+            <TextView
+                android:id="@+id/apertura"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                style="@style/subtitulos"
+
+                android:layout_marginTop="@dimen/margin_12"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+
+                android:focusable="true"
+
+                android:text="@string/variante_partida_default"
+                android:textAlignment="center"
+
+                android:textSize="@dimen/text_18"
+                app:layout_constraintStart_toEndOf="@id/cbFavorite"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/cbVisible"
+                />
+
+            <TextView
+                android:id="@+id/jugador_blanco"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nombre_blancas_partida_default"
+                android:textSize="@dimen/text_16"
+                app:layout_constraintStart_toStartOf="parent"
+
+                app:layout_constraintTop_toBottomOf="@id/apertura"
+                android:layout_margin="@dimen/margin_12"
+
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                />
+
+            <TextView
+                android:id="@+id/jugador_negro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nombre_negro_partida_default"
+                android:textSize="@dimen/text_16"
+                app:layout_constraintStart_toStartOf="parent"
+
+                app:layout_constraintTop_toBottomOf="@id/jugador_blanco"
+                android:layout_marginStart="@dimen/margin_12"
+
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                />
+
+            <TextView
+                android:id="@+id/ritmo_partida"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ritmo_partida_default"
+                android:textSize="@dimen/text_16"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                app:layout_constraintTop_toBottomOf="@id/apertura"
+                android:layout_marginTop="@dimen/margin_8"
+                android:layout_marginEnd="@dimen/margin_20"
+                />
+
+            <TextView
+                android:id="@+id/resultado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/resultado_partida_default"
+                android:textSize="@dimen/text_16"
+                app:layout_constraintStart_toStartOf="@id/ritmo_partida"
+
+                app:layout_constraintTop_toBottomOf="@id/ritmo_partida"
+                android:layout_marginEnd="@dimen/margin_20"
+                />
+
+            <TextView
+                android:id="@+id/titulo_movimientos"
+                style="@style/subtitulos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/movimientos"
+                android:textSize="@dimen/text_18"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/jugador_negro"
+                android:layout_marginTop="@dimen/margin_8"
+                />
+
+            <TextView
+                android:id="@+id/movimientos"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/movimientos_partida_default"
+                android:textSize="@dimen/text_16"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/titulo_movimientos"
+                android:layout_marginTop="@dimen/margin_8"
+                android:layout_marginHorizontal="@dimen/margin_12"
+                android:maxLines="3"
+                android:minLines="1"
+                android:ellipsize="end"
+
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                />
+
+            <TextView
+                android:id="@+id/fecha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_12"
+                android:layout_marginTop="@dimen/margin_8"
+                android:layout_marginBottom="@dimen/margin_8"
+                android:text="@string/fecha__partida_default"
+                android:textSize="@dimen/text_16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/movimientos"
+                style="@style/subtitulos"
+                />
+
+            <TextView
+                android:id="@+id/link_lichess"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_12"
+                android:layout_marginTop="@dimen/margin_8"
+                android:layout_marginBottom="@dimen/margin_8"
+                android:text="@string/ver_en_lichess"
+                android:textSize="@dimen/text_16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/fecha"
+                app:layout_constraintTop_toBottomOf="@id/movimientos"
+                style="@style/subtitulos"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                />
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/cbFavorite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_12"
+                android:layout_marginTop="@dimen/margin_12"
+                android:backgroundTint="@android:color/white"
+                android:button="@drawable/states_cb_favorite"
+                android:buttonTint="@android:color/white"
+                app:layout_constraintBottom_toBottomOf="@+id/apertura"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/cbVisible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_12"
+                android:layout_marginTop="@dimen/margin_12"
+                android:backgroundTint="@android:color/white"
+                android:button="@drawable/states_cb_visible"
+                android:buttonTint="@android:color/white"
+                app:layout_constraintBottom_toBottomOf="@+id/apertura"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

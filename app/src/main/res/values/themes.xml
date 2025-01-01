@@ -1,0 +1,42 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.P4_PMDM" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme.P4_PMDM" parent="Base.Theme.P4_PMDM" />
+
+    <style name="titulos">
+        <item name="android:textSize">32sp</item>
+        <item name="android:fontFamily">@font/titulos</item>
+        <item name="android:textColor">@color/lightGrayColor</item>
+    </style>
+
+    <style name="subtitulos">
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">@font/subtitulos</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="encabezado1">
+        <item name="android:textSize">24sp</item>
+        <item name="android:fontFamily">@font/subtitulos</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="encabezado2">
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/encabezados</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+    <style name="CustomPopupMenu" parent="Widget.AppCompat.PopupMenu.Overflow">
+        <item name="android:backgroundTint">@color/bottom_app_bar</item>
+        <item name="android:textColor">@color/lightGrayColor</item>
+        <item name="android:popupElevation">0dp</item>
+    </style>
+
+
+</resources>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.LoginActivity">
+
+    <ImageView
+        android:id="@+id/imgFondo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/fondo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="@dimen/w_200"
+        android:layout_height="@dimen/h_200"
+        android:contentDescription="@string/logo_de_libase"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/margin_150"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tv_Usuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/titulos"
+        android:textSize="@dimen/text_26"
+        android:text="@string/usuario"
+        android:layout_marginTop="@dimen/margin_90"
+
+        app:layout_constraintTop_toBottomOf="@id/logo"
+        app:layout_constraintStart_toStartOf="@id/tI_Usuario"
+
+        android:textColor="@color/lightGrayColor"
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tI_Usuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_70"
+        android:layout_marginEnd="@dimen/margin_70"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_Usuario"
+
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tI_UsuarioText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/inputs"
+            android:textColor="@color/lightGrayColor"
+            >
+        </com.google.android.material.textfield.TextInputEditText>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/tv_Contra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/titulos"
+        android:textSize="@dimen/text_26"
+        android:text="@string/contra"
+
+        android:layout_marginTop="@dimen/margin_20"
+        app:layout_constraintTop_toBottomOf="@id/tI_Usuario"
+        app:layout_constraintStart_toStartOf="@id/tI_Usuario"
+        android:textColor="@color/lightGrayColor"
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tI_Contra"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_70"
+        android:layout_marginEnd="@dimen/margin_70"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_Contra"
+
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tI_ContraText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/inputs"
+            android:inputType="textPassword"
+            android:textColor="@color/lightGrayColor"
+            >
+        </com.google.android.material.textfield.TextInputEditText>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:id="@+id/guardar_datos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/tI_Contra"
+        app:layout_constraintStart_toStartOf="@id/tI_Contra"
+        app:layout_constraintEnd_toEndOf="@id/tI_Contra"
+        android:layout_marginTop="@dimen/margin_12"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/guardar_datos"
+            android:textSize="@dimen/text_18"
+            style="@style/encabezado1"
+            android:textColor="@color/lightGrayColor"
+            />
+
+        <CheckBox
+            android:id="@+id/check_box_autocompletar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            />
+
+    </LinearLayout>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/iniciarSesion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="@string/iniciarSesion"
+        android:textSize="@dimen/text_18"
+        android:layout_marginTop="@dimen/margin_12"
+        app:layout_constraintEnd_toEndOf="@+id/tI_Contra"
+        app:layout_constraintTop_toBottomOf="@+id/guardar_datos"
+        android:backgroundTint="@color/inputs"
+        android:textColor="@color/lightGrayColor"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/registrarse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/registrarse"
+        android:textSize="@dimen/text_18"
+        android:layout_marginTop="@dimen/margin_12"
+        app:layout_constraintStart_toStartOf="@+id/tI_Contra"
+        app:layout_constraintTop_toBottomOf="@+id/guardar_datos"
+        android:backgroundTint="@color/inputs"
+        android:textColor="@color/lightGrayColor"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

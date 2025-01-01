@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/padding_16"
+    app:cardCornerRadius="@dimen/padding_16"
+    app:cardElevation="@dimen/elevation_8"
+    app:cardBackgroundColor="@color/bottom_app_bar">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_16"
+        >
+
+        <TextView
+            android:id="@+id/titulo_subir_db"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/subir_datos_a_la_base_de_datos"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_26"
+            android:gravity="center"
+            android:textColor="@color/lightGrayColor"
+            android:paddingBottom="@dimen/padding_8"
+            style="@style/titulos"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/datos_a_subir"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_a_subir"
+            style="@style/subtitulos"
+            android:textSize="@dimen/text_20"
+            android:gravity="center"
+            android:textColor="@color/lightGrayColor"
+            app:layout_constraintTop_toBottomOf="@id/titulo_subir_db"
+            />
+
+        <TextView
+            android:id="@+id/datos_eco"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/una_partida_por_rango_de_eco"
+            android:drawableStart="@drawable/ic_punto"
+
+            android:textColor="@color/lightGrayColor"
+            app:layout_constraintTop_toBottomOf="@id/datos_a_subir"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/lista_links"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:divider="@android:color/transparent"
+            android:padding="@dimen/padding_4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/datos_eco"
+            android:layout_marginStart="@dimen/margin_8"
+            />
+
+        <LinearLayout
+            android:id="@+id/botones"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/margin_16"
+            app:layout_constraintTop_toBottomOf="@id/lista_links"
+            >
+
+            <Button
+                android:id="@+id/btn_close"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/lightGrayColor"
+                android:text="@string/cerrar"
+                android:textColor="@color/bottom_app_bar"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="@dimen/margin_20"
+                 />
+
+
+            <Button
+                android:id="@+id/btn_subir"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/lightGrayColor"
+                android:text="@string/subir"
+                android:textColor="@color/bottom_app_bar"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="@dimen/margin_20"
+            />
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
