@@ -52,12 +52,7 @@ class LoginActivity : AppCompatActivity() {
 
         var irALogin = false
 
-        val hilo = Thread{
-            irALogin = intent.getBooleanExtra("ir_a_login", false)
-        }
-
-        hilo.start()
-        hilo.join()
+        irALogin = intent.getBooleanExtra("ir_a_login", false)
 
         if (guadarDatos){
             loginBinding.checkBoxAutocompletar.isChecked = true
