@@ -16,19 +16,19 @@ interface PartidasDao {
     fun getCountPartidas(idUser : Long) : Int
 
     @Query("""
-    SELECT COUNT(*)
-    FROM FavoritosEntity f
-    INNER JOIN PartidaEntity p ON f.idPartida = p.id
-    WHERE 
+    Select count(*)
+    From FavoritosEntity f
+    inner join PartidaEntity p on f.idPartida = p.id
+    where 
         p.ecoGeneral = :ecoGeneral
-        AND (
+        and (
             p.idUsuario = :idUser
-            OR (
+            or (
                 p.idUsuario != :idUser
-                AND EXISTS (
-                    SELECT 1
-                    FROM VisibleEntity v
-                    WHERE v.idPartida = p.id
+                and exists (
+                    Select 1
+                    From VisibleEntity v
+                    where v.idPartida = p.id
                 )
             )
         ) and f.idUsuario = :idUser
