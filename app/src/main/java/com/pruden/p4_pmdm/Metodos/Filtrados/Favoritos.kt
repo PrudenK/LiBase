@@ -29,7 +29,7 @@ fun filtradoFavoritosEnUI(aperturasAdapter: AperturasAdapter, activity: Activity
 private fun filtrarFavoritosAperturas(lista: List<Apertura>, callback: (List<Apertura>) -> Unit) {
     Thread {
         val listaFiltrada = lista.filter { apertura ->
-            LiBaseApplication.database.partidasDao().getSiAperturasTienePartidasPorEcoFavoritas(apertura.eco, idUsuarioActual)
+            LiBaseApplication.database.partidasDao().getSiAperturasTienePartidasPorEcoFavoritasYSonVisibles(apertura.eco, idUsuarioActual)
         }
         callback(listaFiltrada)
     }.start()

@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Log
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -67,7 +68,7 @@ class PartidasPorAperturaActivity : AppCompatActivity(), OnClickListenerPartidas
             partidaBinding.tituloHome.text = "Tus partidas ($ecoGeneral)"
         }
 
-
+        Log.d("adfa", partidas.size.toString())
 
         filtrar()
 
@@ -85,7 +86,11 @@ class PartidasPorAperturaActivity : AppCompatActivity(), OnClickListenerPartidas
                 LiBaseApplication.database.partidasDao().getAllPartidasPorEco(ecoGeneral, idUsuarioActual)
             }
 
+            quitarPartidasFavoritasSiNoSonVisibles()
+
+
             runOnUiThread {
+                Log.d("adfa", partidas.size.toString())
                 partidasAdapter = PartidasAdapter(partidas, this)
                 linearLayoutPartidas = LinearLayoutManager(this)
 
@@ -94,7 +99,28 @@ class PartidasPorAperturaActivity : AppCompatActivity(), OnClickListenerPartidas
                     layoutManager = linearLayoutPartidas
                 }
             }
+            Log.d("adfa", partidas.size.toString())
         }.start()
+        Log.d("adfa", partidas.size.toString())
+    }
+
+    private fun quitarPartidasFavoritasSiNoSonVisibles(){
+        if (esVistaFavoritos) {
+            val nuevasPartidas = partidas.filter { partida ->
+                if (partida.idUsuario != idUsuarioActual) {
+                    var esVisible = true
+                    val hilo = Thread {
+                        esVisible = LiBaseApplication.database.visibleDao().existeVisibleSoloPartida(partida.id)
+                    }
+                    hilo.start()
+                    hilo.join()
+                    esVisible
+                } else true
+            }
+            partidas.clear()
+            partidas.addAll(nuevasPartidas)
+        }
+        Log.d("adfa", partidas.size.toString())
     }
 
     override fun onClickPGN(textViewMovimeintos : TextView) {

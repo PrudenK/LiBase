@@ -23,7 +23,23 @@ interface FavoritosDao {
     @Query("SELECT COUNT(*) > 0 FROM FavoritosEntity WHERE idUsuario = :idUsuario AND idPartida = :idPartida")
     fun existeFavorito(idUsuario: Long, idPartida: Long): Boolean
 
-    @Query("Select count(*) From FavoritosEntity where idUsuario = :idUsuario")
-    fun getNumeroPartidasFavoritasPorUsuario(idUsuario: Long): Int
+    @Query("""
+    SELECT COUNT(*)
+    FROM FavoritosEntity f
+    INNER JOIN PartidaEntity p ON f.idPartida = p.id
+    WHERE 
+        (
+            p.idUsuario = :idUser
+            OR (
+                p.idUsuario != :idUser
+                AND EXISTS (
+                    SELECT 1
+                    FROM VisibleEntity v
+                    WHERE v.idPartida = p.id
+                )
+            )
+        ) and f.idUsuario = :idUser
+""")
+    fun getNumeroPartidasFavoritasPorUsuario(idUser: Long): Int
 
 }

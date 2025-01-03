@@ -21,4 +21,7 @@ interface VisibleDao {
 
     @Query("SELECT COUNT(*) > 0 FROM VisibleEntity WHERE idUsuario = :idUsuario AND idPartida = :idPartida")
     fun existeVisible(idUsuario: Long, idPartida: Long): Boolean
+
+    @Query("SELECT COUNT(*) > 0 FROM VisibleEntity WHERE idPartida = :idPartida")
+    fun existeVisibleSoloPartida(idPartida: Long): Boolean
 }
