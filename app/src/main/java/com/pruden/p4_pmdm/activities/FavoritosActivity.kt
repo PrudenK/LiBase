@@ -8,9 +8,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.pruden.p4_pmdm.Metodos.Filtrados.filtradoFavoritosEnUI
+import com.pruden.p4_pmdm.Metodos.cargarFondo
 import com.pruden.p4_pmdm.Metodos.funcionesBottomAppBar
 import com.pruden.p4_pmdm.R
 import com.pruden.p4_pmdm.adapters.AperturasAdapter
@@ -35,7 +34,7 @@ class FavoritosActivity : AppCompatActivity(), OnClickListenerAperturas {
             insets
         }
 
-        cargarFondo()
+        cargarFondo(favoritosBinding.root, favoritosBinding.imgFondo)
         funcionesBottomAppBar(findViewById(R.id.bottom_app_bar), this)
 
 
@@ -61,13 +60,5 @@ class FavoritosActivity : AppCompatActivity(), OnClickListenerAperturas {
     override fun onResume() {
         super.onResume()
         filtradoFavoritosEnUI(aperturasAdapter, this)
-    }
-
-    fun cargarFondo(){
-        Glide.with(favoritosBinding.root)
-            .load(R.drawable.fondo)
-            .centerCrop()
-            .diskCacheStrategy(DiskCacheStrategy.ALL)
-            .into(favoritosBinding.imgFondo)
     }
 }

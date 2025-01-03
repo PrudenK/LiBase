@@ -13,11 +13,9 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.bumptech.glide.load.engine.DiskCacheStrategy
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.pruden.p4_pmdm.Metodos.Mensajes.dialogBorrarPartida
 import com.pruden.p4_pmdm.Metodos.Mensajes.makeToast
+import com.pruden.p4_pmdm.Metodos.cargarFondo
 import com.pruden.p4_pmdm.baseDatos.LiBaseApplication
 import com.pruden.p4_pmdm.R
 import com.pruden.p4_pmdm.adapters.OnClickListenerPartidas
@@ -54,12 +52,22 @@ class PartidasPorAperturaActivity : AppCompatActivity(), OnClickListenerPartidas
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
         titulo = intent.getStringExtra("eco")!!
         ecoGeneral = titulo.split("@@")[0]
 
         esVistaFavoritos = titulo.contains("Favoritos")
         esVistaGlobal = titulo.contains("Global")
 
+        configurarTitulos()
+
+        filtrarPartidasPorApertura()
+
+        cargarFondo(partidaBinding.root, partidaBinding.imgFondo)
+        funcionesBottomAppBar(findViewById(R.id.bottom_app_bar), this)
+    }
+
+    private fun configurarTitulos(){
         if (esVistaFavoritos){
             partidaBinding.tituloHome.text = "Tus favoritos ($ecoGeneral)"
         }else if(esVistaGlobal){
@@ -67,16 +75,9 @@ class PartidasPorAperturaActivity : AppCompatActivity(), OnClickListenerPartidas
         }else{
             partidaBinding.tituloHome.text = "Tus partidas ($ecoGeneral)"
         }
-
-        Log.d("adfa", partidas.size.toString())
-
-        filtrar()
-
-        cargarFondo()
-        funcionesBottomAppBar(findViewById(R.id.bottom_app_bar), this)
     }
 
-    fun filtrar(){
+    private fun filtrarPartidasPorApertura(){
         Thread{
             partidas = if (esVistaFavoritos){
                 LiBaseApplication.database.partidasDao().getAllPartidasFavoritasPorEco(ecoGeneral, idUsuarioActual)
@@ -203,7 +204,7 @@ class PartidasPorAperturaActivity : AppCompatActivity(), OnClickListenerPartidas
             }
             runOnUiThread {
                 if(esVistaFavoritos && !fav){
-                    filtrar()
+                    filtrarPartidasPorApertura()
                     textoSiNoQuedanPartidas()
                 }
             }
@@ -220,7 +221,7 @@ class PartidasPorAperturaActivity : AppCompatActivity(), OnClickListenerPartidas
             }
             runOnUiThread {
                 if(esVistaGlobal && !visible){
-                    filtrar()
+                    filtrarPartidasPorApertura()
                     textoSiNoQuedanPartidas()
                 }
             }
@@ -232,7 +233,7 @@ class PartidasPorAperturaActivity : AppCompatActivity(), OnClickListenerPartidas
             LiBaseApplication.database.partidasDao().updatePartida(partidaEntity)
             runOnUiThread {
                 partidasAdapter.update(partidaEntity)
-                filtrar()
+                filtrarPartidasPorApertura()
                 partidasAdapter.notifyDataSetChanged()
             }
         }.start()
@@ -256,14 +257,6 @@ class PartidasPorAperturaActivity : AppCompatActivity(), OnClickListenerPartidas
         if(partidas.size == 1){
             partidaBinding.textoSiNoHayPartidas.text = getString(R.string.no_hay_partidas)
         }
-    }
-
-    fun cargarFondo(){
-        Glide.with(partidaBinding.root)
-            .load(R.drawable.fondo)
-            .centerCrop()
-            .diskCacheStrategy(DiskCacheStrategy.ALL)
-            .into(partidaBinding.imgFondo)
     }
 
     override fun addPartidaAux(partidaEntity: PartidaEntity) {}

@@ -21,6 +21,7 @@ import com.pruden.p4_pmdm.Metodos.Mensajes.dialogoFABURL
 import com.pruden.p4_pmdm.Metodos.Mensajes.dialogoInfoEco
 import com.pruden.p4_pmdm.Metodos.Mensajes.dialogoSubirDatos
 import com.pruden.p4_pmdm.Metodos.Mensajes.makeToast
+import com.pruden.p4_pmdm.Metodos.cargarFondo
 import com.pruden.p4_pmdm.Metodos.procesarPartida
 import com.pruden.p4_pmdm.baseDatos.LiBaseApplication
 import com.pruden.p4_pmdm.Metodos.cargarFragmentAgregarPartidaManual
@@ -52,7 +53,7 @@ class HomeActivity : AppCompatActivity(), OnClickListenerAperturas, FragmentAux 
             insets
         }
 
-        cargarFondo()
+        cargarFondo(homeBinding.root, homeBinding.imgFondo)
         funcionesBottomAppBar(findViewById(R.id.bottom_app_bar), this)
         cargarColorDeLosFabs(homeBinding.fabMenu, homeBinding.fabUrl, homeBinding.fabManual)
 
@@ -177,14 +178,6 @@ class HomeActivity : AppCompatActivity(), OnClickListenerAperturas, FragmentAux 
             }
             popupMenu.show()
         }
-    }
-
-    fun cargarFondo(){
-        Glide.with(homeBinding.root)
-            .load(R.drawable.fondo)
-            .centerCrop()
-            .diskCacheStrategy(DiskCacheStrategy.ALL)
-            .into(homeBinding.imgFondo)
     }
 
     private fun cargarColorDeLosFabs(vararg fabs : FloatingActionButton){

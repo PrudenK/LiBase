@@ -3,7 +3,6 @@ package com.pruden.p4_pmdm.Metodos
 import android.app.Activity
 import android.content.Intent
 import android.graphics.PorterDuff
-import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import androidx.core.content.ContextCompat

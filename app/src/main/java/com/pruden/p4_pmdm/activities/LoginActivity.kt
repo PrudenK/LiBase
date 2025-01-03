@@ -9,12 +9,12 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.bumptech.glide.Glide
-import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.pruden.p4_pmdm.baseDatos.LiBaseApplication
 import com.pruden.p4_pmdm.Metodos.comprobarContra
 import com.pruden.p4_pmdm.Metodos.hashearContraConSAl
 import com.pruden.p4_pmdm.Metodos.Mensajes.makeToast
+import com.pruden.p4_pmdm.Metodos.cargarFondo
+import com.pruden.p4_pmdm.Metodos.cargarLogo
 import com.pruden.p4_pmdm.R
 import com.pruden.p4_pmdm.classes.entities.UsuarioEntity
 import com.pruden.p4_pmdm.databinding.ActivityLoginBinding
@@ -40,19 +40,22 @@ class LoginActivity : AppCompatActivity() {
             insets
         }
 
-        cargarLogo()
-        cargarFondo()
+        cargarLogo(loginBinding.root, loginBinding.logo)
+        cargarFondo(loginBinding.root, loginBinding.imgFondo)
 
-        preferences = getSharedPreferences("usuario", Context.MODE_PRIVATE)
+        cargarDatosInicios()
 
+        botonRegistrarse()
+        botonInicarSesion()
+        checkBox()
+    }
 
+    private fun cargarDatosInicios(){preferences = getSharedPreferences("usuario", Context.MODE_PRIVATE)
         val guadarDatos = preferences.getBoolean("sp_guardar_datos",false)
         val usuario = preferences.getString("sp_usuario", "").toString()
         val contra = preferences.getString("sp_contra", "").toString()
 
-        var irALogin = false
-
-        irALogin = intent.getBooleanExtra("ir_a_login", false)
+        val irALogin = intent.getBooleanExtra("ir_a_login", false)
 
         if (guadarDatos){
             loginBinding.checkBoxAutocompletar.isChecked = true
@@ -62,16 +65,10 @@ class LoginActivity : AppCompatActivity() {
             if(!irALogin){
                 iniciarSesion(usuario, contra)
             }
-
         }
-
-        botonRegistrarse()
-        botonInicarSesion()
-        checkBox()
-
     }
 
-    fun botonInicarSesion(){
+    private fun botonInicarSesion(){
         loginBinding.iniciarSesion.setOnClickListener {
             val usuario = loginBinding.tIUsuarioText.text.toString()
             val contra = loginBinding.tIContraText.text.toString()
@@ -109,7 +106,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
 
-    fun botonRegistrarse(){
+    private fun botonRegistrarse(){
         loginBinding.registrarse.setOnClickListener {
             val usuario = loginBinding.tIUsuarioText.text.toString()
             val contra = loginBinding.tIContraText.text.toString()
@@ -155,23 +152,6 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    fun cargarLogo(){
-        Glide.with(loginBinding.root)
-            .load(R.mipmap.ic_libase_logo_round)
-            .diskCacheStrategy(DiskCacheStrategy.ALL)
-            .into(loginBinding.logo)
-    }
-
-    fun cargarFondo(){
-        Glide.with(loginBinding.root)
-            .load(R.drawable.fondo)
-            .centerCrop()
-            .diskCacheStrategy(DiskCacheStrategy.ALL)
-            .into(loginBinding.imgFondo)
-    }
-
     @SuppressLint("MissingSuperCall")
-    override fun onBackPressed() {
-
-    }
+    override fun onBackPressed() {}
 }
